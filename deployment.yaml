@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mavenapp029
+  labels:
+    app: mavenapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mavenapp
+  template:
+    metadata:
+      labels:
+        app: mavenapp
+    spec:
+      containers:
+      - name: mavenapp3
+        image: anadocker123/maven_app:v1
+        ports:
+        - containerPort: 80
